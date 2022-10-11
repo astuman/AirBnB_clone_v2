@@ -118,11 +118,11 @@ class HBNBCommand(cmd.Cmd):
         try:
             if not args:
                 raise SyntaxError()
-            split1 = args.split(' ')
-            new_instance = eval('{}()'.format(split1[0]))
+            split1 = args.split(" ")
+            new_instance = eval("{}()".format(split1[0]))
             params = split1[1:]
             for param in params:
-                k, v = param.split('=')
+                k, v = param.split("=")
                 try:
                     attribute = HBNBCommand.verify_attribute(v)
                 except:
