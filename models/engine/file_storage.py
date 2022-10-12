@@ -10,14 +10,14 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
-        if cls is not None:
-            cls_objects = {}
-            for k, v in FileStorage.__objects.items():
-                if k.startswith(cls.__name__):
-                    cls_objects.update({k: v})
-            return cls_objects
-        else:
+        if cls is None:
             return FileStorage.__objects
+
+        objects = {}
+        for key, value in FileStorage.__objects.items():
+            objects.update({key: value})
+
+        return objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -30,15 +30,7 @@ class FileStorage:
             temp.update(FileStorage.__objects)
             for key, val in temp.items():
                 temp[key] = val.to_dict()
-            json.dump(temp, f, sort_keys=True, indent=4)
-
-    def delete(self, obj=None):
-        """Deletes the object obj if obj is in __objects"""
-        if obj is not None:
-            for k, v in FileStorage.__objects.items():
-                if v is obj:
-                    tmp = k
-            FileStorage.__objects.pop(tmp)
+            json.dump(temp, f)
 
     def reload(self):
         """Loads storage dictionary from file"""
@@ -60,12 +52,15 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
-    
-    
-    def close(self):
-        """Handle storage close
-        """
-        self.reload()
+
+    def delete(self, obj=None):
+        if obj:
+            name = obj.__class__.__name__
+            id = obj.id
+            key = ".".join([name, id])
+            if key in FileStorage.__objects:
+                del FileStorage.__objects[key]
+                self.save()
