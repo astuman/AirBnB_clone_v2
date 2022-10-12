@@ -31,6 +31,7 @@ class DBStorage():
         mySQL_p = getenv("HBNB_MYSQL_PWD")
         db_host = getenv("HBNB_MYSQL_HOST")
         db_name = getenv("HBNB_MYSQL_DB")
+    
 
         url = {'drivername': 'mysql+mysqldb', 'host': db_host,
                'username': mySQL_u, 'password': mySQL_p, 'database': db_name}

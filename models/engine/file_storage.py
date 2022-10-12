@@ -30,7 +30,7 @@ class FileStorage:
             temp.update(FileStorage.__objects)
             for key, val in temp.items():
                 temp[key] = val.to_dict()
-            json.dump(temp, f, sort_keys=True, indent=4))
+            json.dump(temp, f, sort_keys=True, indent=4)
 
     def delete(self, obj=None):
         """Deletes the object obj if obj is in __objects"""
