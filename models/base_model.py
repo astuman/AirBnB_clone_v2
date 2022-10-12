@@ -17,7 +17,7 @@ class BaseModel:
         String(60), 
         nullable=False, 
         unique=True,
-        primary_key=True
+        primary_key=True,
         default=str(uuid.uuid4())
     )
 

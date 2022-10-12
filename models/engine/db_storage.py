@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """db storage module"""
 
 from os import getenv
