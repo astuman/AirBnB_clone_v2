@@ -7,7 +7,7 @@ from datetime import datetime
 from os.path import exists
 
 
-env.hosts = ['54.173.84.86', '34.204.61.191']  # <IP web-01>, <IP web-02>
+env.hosts = ['54.173.84.88', '34.204.61.191']  # <IP web-01>, <IP web-02>
 # ^ All remote commands must be executed on both web servers
 # (using env.hosts = ['<IP web-01>', 'IP web-02'] variable in your script)
 
