@@ -2,12 +2,12 @@
 # script that sets up your web servers for the deployment of web_static
 apt-get update
 apt-get -y install nginx
-sudo mkdir -p /data/web_static/releases/test/
-sudo mkdir -p /data/webstatic/shared
-sudo echo "Hello World!" > /data/web_static/releases/test/index.html
-sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
+mkdir -p /data/web_static/releases/test/
+mkdir -p /data/webstatic/shared
+echo "Hello World!" > /data/web_static/releases/test/index.html
+ln -sf /data/web_static/releases/test/ /data/web_static/current
 
-sudo chown -R ubuntu:ubuntu /data/
+chown -R ubuntu:ubuntu /data/
 
 printf %s "server {
     listen 80 default_server;
