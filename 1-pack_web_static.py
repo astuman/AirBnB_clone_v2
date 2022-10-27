@@ -5,6 +5,7 @@ from fabric.api import env
 from fabric.api import put
 from fabric.api import run
 
+
 env.hosts = ["54.173.84.88", "34.204.61.191	"]
 
 
