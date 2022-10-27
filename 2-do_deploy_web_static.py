@@ -9,7 +9,7 @@ from fabric.api import put
 from fabric.api import run
 
 
-env.hosts = ['<54.173.84.88 web-01>', '<34.204.61.191 web-02>']
+env.hosts = ["54.173.84.88", "34.204.61.191"]
 # <IP web-01>, <IP web-02>
 # ^ All remote commands must be executed on both web servers
 # (using env.hosts = ['<IP web-01>', 'IP web-02'] variable in your script)
