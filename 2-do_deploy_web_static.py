@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-Write a Fabric script (based on the file 1-pack_web_static.py) that distributes an archive to your web servers, using the function do_deploy
+Write a Fabric script (based on the file 1-pack_web_static.py)
+that distributes an archive to your web servers, using the function do_deploy
 """
 from fabric.api import *
 from datetime import datetime
 from os.path import exists
 
 
-env.hosts = ['54.173.84.88 web-01', '34.204.61.191 web-02']  # <IP web-01>, <IP web-02>
+env.hosts = ['54.173.84.88 web-01', '34.204.61.191 web-02']
+# <IP web-01>, <IP web-02>
 # ^ All remote commands must be executed on both web servers
 # (using env.hosts = ['<IP web-01>', 'IP web-02'] variable in your script)
 
