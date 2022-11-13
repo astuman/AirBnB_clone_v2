@@ -26,7 +26,7 @@ def do_pack():
     if result.succeeded:
         return filename
     else:
-        return None
+        return "Not Deployed"
 
 
 def do_deploy(archive_path):
