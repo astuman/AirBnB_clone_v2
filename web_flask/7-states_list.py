@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ 5. Add fifth view func that displays HTML page if n is int """
-from models import file_storage
+from models import FileStorage
 from flask import Flask
 from flask import render_template
 
@@ -60,7 +60,7 @@ def odd_or_even(n):
 def states_list():
     """displays a HTML page of state objects present in DBstorage
     message on page changes depending on value passed"""
-    return render_template('7-states_list.html', states=storage.all("State"))
+    return render_template('7-states_list.html', states=FileStorage.all("State"))
 
 
 if __name__ == '__main__':
