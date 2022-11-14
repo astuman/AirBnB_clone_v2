@@ -15,8 +15,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 class DBStorage:
-    """This class creates the engine for a mysql database
-    storage system"""
+    """creates the engine for a mysql database storage system"""
 
     all_classes = {"BaseModel": BaseModel, "User": User, "State": State,
                    "City": City, "Amenity": Amenity, "Place": Place,
